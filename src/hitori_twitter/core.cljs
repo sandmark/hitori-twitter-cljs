@@ -1,16 +1,18 @@
 (ns ^:figwheel-hooks hitori-twitter.core
-  (:require
-   [goog.dom :as gdom]
-   [reagent.core :as reagent :refer [atom]]))
+  (:require [goog.dom :as gdom]
+            [hitori-twitter.tweet :as t]
+            [reagent.core :as reagent :refer [atom]]))
 
 (defn get-app-element []
   (gdom/getElement "app"))
 
-(defn hello-world []
-  [:div "Hello React!"])
+(defn app []
+  [:div
+   [t/tweet {:content "Hello"}]
+   [t/tweet {:content "React!"}]])
 
 (defn mount [el]
-  (reagent/render-component [hello-world] el))
+  (reagent/render-component [app] el))
 
 (defn mount-app-element []
   (when-let [el (get-app-element)]
