@@ -8,7 +8,15 @@
 
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojure/clojurescript "1.10.520"]
-                 [reagent "0.8.1"]]
+                 [reagent "0.8.1"]
+                 [garden "1.3.9"]]
+
+  :plugins [[lein-garden "0.3.0"]]
+
+  :garden
+  {:builds [{:source-paths ["src"]
+             :stylesheet   hitori-twitter.styles/style
+             :compiler     {:output-to "resources/public/css/style.css"}}]}
 
   :source-paths ["src"]
 
