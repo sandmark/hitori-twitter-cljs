@@ -8,8 +8,14 @@
 
 (defn app []
   [:div
-   [t/tweet {:content "Hello"}]
-   [t/tweet {:content "React!"}]])
+   [t/tweet {:icon         "🌽"
+             :display-name "もろこし太郎"
+             :account-name "morokoshi"
+             :content      "今日も1日もろこしがうまい"}]
+   [t/tweet {:icon         "🦐"
+             :display-name "エビデンス"
+             :account-name "evidence"
+             :content "かにみそたべたい"}]])
 
 (defn mount [el]
   (reagent/render-component [app] el))
