@@ -1,21 +1,21 @@
 (ns ^:figwheel-hooks hitori-twitter.core
   (:require [goog.dom :as gdom]
-            [hitori-twitter.tweet :as t]
-            [reagent.core :as reagent :refer [atom]]))
+            [reagent.core :as reagent]
+            [hitori-twitter.timeline :as timeline]))
 
 (defn get-app-element []
   (gdom/getElement "app"))
 
 (defn app []
-  [:div
-   [t/tweet {:icon         "🌽"
-             :display-name "もろこし太郎"
-             :account-name "morokoshi"
-             :content      "今日も1日もろこしがうまい"}]
-   [t/tweet {:icon         "🦐"
-             :display-name "エビデンス"
-             :account-name "evidence"
-             :content "かにみそたべたい"}]])
+  (let [tweets [{:icon         "🌽"
+                 :display-name "もろこし太郎"
+                 :account-name "morokoshi"
+                 :content      "今日も1日もろこしがうまい"}
+                {:icon         "🦐"
+                 :display-name "エビデンス"
+                 :account-name "evidence"
+                 :content      "かにみそたべたい"}]]
+    [timeline/timeline {:tweets tweets}]))
 
 (defn mount [el]
   (reagent/render-component [app] el))
