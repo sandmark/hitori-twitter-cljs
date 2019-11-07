@@ -4,32 +4,23 @@ ClojureScript + React (Reagent) でひとりツイッターをつくるよ。
 
 Ref. https://sbfl.net/blog/2019/02/20/react-only-tutorial/
 
-## Development
+## 動かしかた
 
-To get an interactive development environment run:
+まずは CSS をビルドするよ。
+[garden](https://github.com/noprompt/garden)を使ってるから、これをやらないと CSS がなくて困るよ。
+
+    lein garden once
+
+次に JavaScript をビルドして、サーバを立ち上げるよ。
+デフォルトでは `localhost:9500` で待ち受けるはずだよ。
 
     lein fig:build
 
-This will auto compile and send all changes to the browser without the
-need to reload. After the compilation process is complete, you will
-get a Browser Connected REPL. An easy way to try it is:
-
-    (js/alert "Am I connected?")
-
-and you should see an alert in the browser window.
-
-To clean all compiled files:
-
-	lein clean
-
-To create a production build run:
-
-	lein clean
-	lein fig:min
-
+ブラウザで開くと Twitter と似て非なるものが出てくるので、
+ツイートするなどして遊んでみるとよいです。
 
 ## License
 
-Copyright © 2018 sandmark
+Copyright © 2019 sandmark
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
