@@ -1,6 +1,6 @@
 (defproject hitori-twitter.core "0.1.0-SNAPSHOT"
   :description "hitori-twitter: A reagent tutorial app"
-  :url "https://github.com/sandmark/hitori-twitter"
+  :url "https://github.com/sandmark/hitori-twitter-cljs"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
 
